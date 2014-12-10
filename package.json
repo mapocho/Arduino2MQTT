@@ -1,0 +1,23 @@
+{
+  "name": "Arduino2MQTT",
+  "version": "1.0.0",
+  "description": "Leer desde Arduino y dejarlo en MQTT Broker",
+  "main": "Arduino2MQTT.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapocho/Arduino2MQTT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapocho/Arduino2MQTT/issues"
+  },
+  "homepage": "https://github.com/mapocho/Arduino2MQTT",
+  "dependencies": {
+    "mqtt": "^0.3.13",
+    "serialport": "^1.4.6"
+  }
+}
