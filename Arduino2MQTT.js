@@ -27,12 +27,10 @@ puertoSerial.on('data', function(data) {
 	try {
 		var jsonBuffer = JSON.parse( data );
 		
-		// Abrimos conexió MQTT Broker
-		clienteMQTT.on('connect', function() {
-			clienteMQTT.publish(MQTT_BROKER_TOPIC, jsonBuffer);
-			console.log("Se publicó MQTT Broker: \"" + jsonBuffer + "\"");
-		    clienteMQTT.end();
-	    });
+		// Publicamos en MQTT Broker
+		clienteMQTT.publish(MQTT_BROKER_TOPIC, jsonBuffer);
+		console.log("Se publicó MQTT Broker: \"" + JSON.stringify(jsonBuffer) + "\"");
+//    clienteMQTT.end();
 	} catch (e) {
 	  console.log("Error: \"" + e + "\"");
 	}	
