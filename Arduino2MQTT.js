@@ -4,11 +4,12 @@ const MQTT_BROKER_PORT = process.env.MQTT_BROKER_PORT || 18919;
 const MQTT_BROKER_USERNAME = process.env.MQTT_BROKER_USERNAME || "naecfjkf";
 const MQTT_BROKER_PASSWORD = process.env.MQTT_BROKER_PASSWORD || "nJmWvEGZF-b4";
 const MQTT_BROKER_TOPIC = process.env.MQTT_BROKER_TOPIC || "/demo/arduino01/";
+const ARDUINO_DEVTTY = process.env.ARDUINO_DEVTTY || "/dev/ttyACM0";
 
 // Para leer JSOn que viene desde el Arduino (puerta serial)
 var serialport = require("serialport");
 var SerialPort = serialport.SerialPort; 
-var puertoSerial = new SerialPort("/dev/ttyACM1", {
+var puertoSerial = new SerialPort(ARDUINO_DEVTTY, {
   baudrate: 9600,
   parser: serialport.parsers.readline("\n")
 });
